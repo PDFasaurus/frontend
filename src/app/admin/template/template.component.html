@@ -1,0 +1,62 @@
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a routerLink="/admin/templates">Templates</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Template edit</li>
+  </ol>
+</nav>
+
+<div class="alert alert-success" role="alert" *ngIf="!!notification">
+  {{notification}}
+</div>
+
+<div class="alert alert-danger" role="alert" *ngIf="!!error">
+  {{error}}
+</div>
+
+<div class="row w-100 mb-0">
+  <div class="w-75">
+    <input class="h2" [(ngModel)]="name" />
+    <h4 class="h6" (click)="copyToClipboard()">
+      Template ID:
+      <span class="button uuid">
+        {{uuid}} <span data-feather="clipboard"></span>
+      </span>
+    </h4>
+  </div>
+  <div class="ml-auto">
+    <div class="btn-group mr-1">
+      <button type="button" class="btn btn-sm btn-dark" (click)="save()">Save</button>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-sm btn-dark" (click)="preview()">Preview template</button>
+      <button type="button" class="btn btn-sm btn-danger" (click)="delete()">Delete</button>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="w-25">
+    <h5>JSON <small>(string)</small></h5>
+    <ngx-codemirror
+      [(ngModel)]="templateValues"
+      [options]="{
+        lineNumbers: true,
+        theme: 'dracula',
+        mode: 'json'
+      }"
+    ></ngx-codemirror>
+  </div>
+
+  <div class="w-75">
+    <h5>HTML template <small>(Handlebars)</small></h5>
+    <ngx-codemirror
+      [(ngModel)]="content"
+      [options]="{
+        lineNumbers: true,
+        theme: 'dracula',
+        mode: 'handlbars'
+      }"
+    ></ngx-codemirror>
+  </div>
+</div>

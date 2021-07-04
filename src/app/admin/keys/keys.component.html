@@ -1,0 +1,122 @@
+
+<h1 class="h2">API keys</h1>
+<h4 class="h6">Your super secret access key. Please keep it safe.</h4>
+
+<div class="alert alert-danger" role="alert" *ngIf="!!error">
+  {{error}}
+</div>
+
+<div class="row api-key">
+  <div class="key" disabled="yes">{{key}}</div>
+  <div class="btn-group ml-2">
+    <button type="button" class="btn btn-sm btn-dark" (click)="copyToClipboard()">Copy to clipboard</button>
+    <button type="button" class="btn btn-sm btn-dark" (click)="generateNewKey()">Generate new key</button>
+  </div>
+</div>
+
+<div class="alert alert-success" role="alert">
+  The <strong>/base64</strong> & <strong>/buffer</strong> examples are only illustrated on the cURL & Javascript code snippets.
+</div>
+
+<ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+  <li [ngbNavItem]="1">
+    <a ngbNavLink>CURL</a>
+    <ng-template ngbNavContent>
+      <ngx-codemirror
+        [(ngModel)]="curl"
+        [options]="{
+          lineNumbers: true,
+          theme: 'dracula',
+          mode: 'shell',
+          readOnly: true
+        }"
+      ></ngx-codemirror>
+    </ng-template>
+  </li>
+  <li [ngbNavItem]="2">
+    <a ngbNavLink>NodeJS</a>
+    <ng-template ngbNavContent>
+      <ngx-codemirror
+        [(ngModel)]="javascript"
+        [options]="{
+          lineNumbers: true,
+          theme: 'dracula',
+          mode: 'javascript',
+          readOnly: true
+        }"
+      ></ngx-codemirror>
+    </ng-template>
+  </li>
+  <li [ngbNavItem]="3">
+    <a ngbNavLink>PHP</a>
+    <ng-template ngbNavContent>
+      <ngx-codemirror
+        [(ngModel)]="php"
+        [options]="{
+          lineNumbers: true,
+          theme: 'dracula',
+          mode: 'php',
+          readOnly: true
+        }"
+      ></ngx-codemirror>
+    </ng-template>
+  </li>
+  <li [ngbNavItem]="4">
+    <a ngbNavLink>Ruby</a>
+    <ng-template ngbNavContent>
+      <ngx-codemirror
+        [(ngModel)]="ruby"
+        [options]="{
+          lineNumbers: true,
+          theme: 'dracula',
+          mode: 'ruby',
+          readOnly: true
+        }"
+      ></ngx-codemirror>
+    </ng-template>
+  </li>
+  <li [ngbNavItem]="5">
+    <a ngbNavLink>C#</a>
+    <ng-template ngbNavContent>
+      <ngx-codemirror
+        [(ngModel)]="csharp"
+        [options]="{
+          lineNumbers: true,
+          theme: 'dracula',
+          mode: 'javascript',
+          readOnly: true
+        }"
+      ></ngx-codemirror>
+    </ng-template>
+  </li>
+  <li [ngbNavItem]="6">
+    <a ngbNavLink>Java</a>
+    <ng-template ngbNavContent>
+      <ngx-codemirror
+        [(ngModel)]="java"
+        [options]="{
+          lineNumbers: true,
+          theme: 'dracula',
+          mode: 'javascript',
+          readOnly: true
+        }"
+      ></ngx-codemirror>
+    </ng-template>
+  </li>
+  <li [ngbNavItem]="7">
+    <a ngbNavLink>Smoke signals</a>
+    <ng-template ngbNavContent>
+      <ngx-codemirror
+        [(ngModel)]="smoke"
+        [options]="{
+          lineNumbers: true,
+          theme: 'dracula',
+          mode: 'shell',
+          readOnly: true
+        }"
+      ></ngx-codemirror>
+    </ng-template>
+  </li>
+</ul>
+
+<div [ngbNavOutlet]="nav" class="mt-2"></div>

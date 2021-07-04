@@ -1,0 +1,55 @@
+
+
+
+<div class="row w-100">
+  <div>
+    <h1 class="h2">Dashboard</h1>
+    <h4 class="h6">There has been a total of {{total}} requests.</h4>
+  </div>
+  <div class="ml-auto">
+    <div class="btn-group">
+      <button type="button" class="btn btn-sm btn-dark" *ngIf="hasPreviousPage">Previous</button>
+      <button type="button" class="btn btn-sm btn-dark" *ngIf="hasNextPage">Next</button>
+    </div>
+  </div>
+</div>
+
+<div class="alert alert-danger" role="alert" *ngIf="!!error">
+  {{error}}
+</div>
+
+<div class="alert alert-success mb-3" role="alert">
+  Need help integrating PDFasaurus? Check out the <a routerLink="/admin/keys" style="color: white; font-weight: 800;">keys</a> page.
+</div>
+
+<div class="chart" *ngIf="barChartData">
+  <canvas baseChart
+    [datasets]="barChartData"
+    [labels]="barChartLabels"
+    [options]="barChartOptions"
+    [plugins]="barChartPlugins"
+    [legend]="barChartLegend"
+    [chartType]="barChartType">
+  </canvas>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-sm">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>API key</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let request of requests">
+        <td>{{request.template.uuid}}</td>
+        <td>{{request.template.name}}</td>
+        <td>{{request.apiKey}}</td>
+        <td>{{request.created_at}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

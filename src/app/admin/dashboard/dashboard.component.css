@@ -1,0 +1,38 @@
+h1, h2, h4 {
+  font-weight: 500;
+  color: #21262A;
+  font-size: 16px;
+}
+
+h1 {
+  padding-top: 45px;
+  font-size: 30px;
+  font-family: lores-9-wide, sans-serif;
+}
+
+h4 {
+  margin-top: 10px;
+  margin-bottom: 40px;
+  color: #ACB5BD;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.chart {
+  display: block;
+  margin-bottom: 30px;
+  margin-top: 00px;
+  height: 300px;
+}
+
+.row {
+  margin-left: 0px;
+  margin-right: 0px;
+  align-items: center;
+}
+
+th {
+  font-size: 13px;
+  font-family: lores-9-wide, sans-serif;
+  font-weight: 500;
+}

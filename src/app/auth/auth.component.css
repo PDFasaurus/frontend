@@ -1,0 +1,48 @@
+.form-signin {
+  margin-right: auto;
+  margin-left: auto;
+  width: 300px;
+  margin-top: 200px;
+}
+
+* {
+  font-family: proxima-nova, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: #00bce4;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 30px;
+  margin-bottom: 30px;
+  font-family: lores-9-wide, sans-serif;
+}
+
+.logo {
+  left: 20px;
+  top: 20px;
+  display: block;
+  border-radius: 3px;
+  width: 80px;
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+button {
+  font-size: 15px;
+  font-family: lores-9-wide, sans-serif;
+  font-weight: bold;
+  background: #00a98f;
+  border: none;
+}
+
+.copyright {
+  font-size: 10px;
+  font-family: lores-9-wide, sans-serif;
+}

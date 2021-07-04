@@ -1,0 +1,63 @@
+<nav class="navbar sticky-top flex-md-nowrap p-0">
+  <a class="navbar-brand" href="#">
+    <img src="../../assets/logo.png" height="40" />
+    <span class="pl-2"></span>
+    <span class="argh">Use coupon 0FE2655D to get 100% off</span>
+  </a>
+  <ul class="navbar-nav px-3">
+    <li class="nav-item text-nowrap">
+      <a class="nav-link" href="#"></a>
+    </li>
+  </ul>
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar collapse">
+      <div class="sidebar-sticky pt-3">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="dashboard" routerLinkActive="active">
+              <span data-feather="home"></span>
+              Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="templates" routerLinkActive="active">
+              <span data-feather="file"></span>
+              Templates
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="keys" routerLinkActive="active">
+              <span data-feather="key"></span>
+              API keys
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="plan" routerLinkActive="active">
+              <span data-feather="credit-card"></span>
+              Plan
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="mailto:support@pdfasaurus.com?subject=Aaaargh!">
+              <span data-feather="help-circle"></span>
+              Support
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:void" (click)="logout()">
+              <span data-feather="log-out"></span>
+              Logout
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>

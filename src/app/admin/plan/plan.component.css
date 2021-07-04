@@ -1,0 +1,103 @@
+h1, h2, h4 {
+  font-weight: 500;
+  color: #21262A;
+  font-size: 16px;
+}
+
+h1 {
+  padding-top: 45px;
+  font-size: 30px;
+  font-family: lores-9-wide, sans-serif;
+}
+
+h4 {
+  margin-top: 10px;
+  margin-bottom: 40px;
+  color: #ACB5BD;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.row {
+  margin-left: 0px;
+  margin-right: 0px;
+  align-items: center;
+}
+
+.api-button {
+  background: #046b5e ;
+  border-radius: 3px;
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  padding: 5px;
+  margin-right: 3px;
+  cursor: pointer;
+  color: #4BE372;
+}
+
+.upgrade-row {
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.upgrade-row h5 {
+ padding: 0px;
+ margin: 0px;
+ margin-right: 10px;
+}
+
+.change-button, .buy-button {
+  background: #046b5e ;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  padding: 5px;
+  margin-right: 3px;
+  cursor: pointer;
+  color: #4BE372;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 20px;
+  border: none;
+  font-family: lores-9-wide, sans-serif;
+}
+
+a {
+  color: #00a98f;
+}
+
+a:hover {
+  text-decoration: none;
+  opacity: 0.7;
+}
+
+.fossils {
+  flex-direction: column;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.fossils .plan {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.fossils .amount {
+  font-size: 16px;
+}
+
+.fossils .renewal {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.fossils .row {
+  margin-top: 30px;
+}

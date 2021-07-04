@@ -1,0 +1,47 @@
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h2 class="modal-title" id="modal-basic-title">Create new template</h2>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <div class="input-group">
+          <input [(ngModel)]="name" name="name" type="text" id="name" class="form-control" placeholder="Template name" required="" autofocus="">
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <div class="btn-group">
+      <button type="button" class="btn btn-sm btn-dark" (click)="createTemplate()">Okay</button>
+      <!-- <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button> -->
+    </div>
+  </div>
+</ng-template>
+
+<div class="row w-100">
+  <div>
+    <h1 class="h2">PDF templates</h1>
+    <h4 class="h6">You have {{templates.length}} {{templates.length == 1 ? "template" : "templates"}}. <a routerLink="/admin/keys">Learn how to use them.</a></h4>
+  </div>
+  <div class="ml-auto">
+    <div class="btn-group">
+      <button type="button" class="btn btn-sm btn-dark" (click)="open(content)">Create a new template</button>
+    </div>
+  </div>
+</div>
+
+<div class="p-3 bg-white rounded list">
+  <ng-container *ngFor="let template of templates">
+    <a routerLink="/admin/templates/{{template.id}}" class="template">
+      <p class="media-body small lh-125">
+        <strong class="d-block text-dark h5">{{template.name}}</strong>
+        Template ID: {{template.uuid}}
+      </p>
+      <span data-feather="chevron-right"></span>
+    </a>
+  </ng-container>
+</div>

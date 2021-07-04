@@ -1,0 +1,89 @@
+
+  <div class="cover-container d-flex h-100 p-3 mx-auto flex-column text-center">
+    <header class="masthead mb-auto">
+      <div class="inner nav-inner">
+        <h3 class="masthead-brand">
+          <a class="navbar-brand" href="#">
+            <img src="../../assets/logo.png" height="45" />
+            <span class="logo"></span>
+            <span class="argh">Aaaargh!</span>
+          </a>
+        </h3>
+        <nav class="nav nav-masthead justify-content-center">
+          <a class="nav-link" href="#" [ngClass]="{'active': view === 'home'}" (click)="navigate('home')">Home</a>
+          <a class="nav-link" href="#" [ngClass]="{'active': view === 'pricing'}" (click)="navigate('pricing')">Pricing</a>
+          <a class="nav-link" href="javascript:void(0);" id="yack.widget" data-inbox="pdfasaurus">Support</a>
+          <a class="nav-link" href="/auth" target="_blank">Login / Signup</a>
+          <a class="nav-link" href="https://twitter.com/PDFasaurus" target="_blank"><img src="../../assets/twitter-icon.png" border="0" height="20" /></a>
+        </nav>
+      </div>
+    </header>
+
+    <ng-container *ngIf="view == 'pricing'">
+      <main role="main" class="inner cover">
+        <h1 class="cover-heading">
+          Non Jurassic Pricing
+        </h1>
+        <p class="lead mt-4">
+          {{amount}} API calls per month <span data-feather="arrow-right"></span> ${{cost}} (USD)
+        </p>
+      </main>
+
+      <div class="text-center mt-0">
+        <div class="row api-button-row">
+          <div class="api-button" (click)="decrease()">
+            <span data-feather="minus"></span>
+          </div>
+          <div class="api-button" (click)="increase()">
+            <span data-feather="plus"></span>
+          </div>
+        </div>
+      </div>
+
+      <p class="mt-4 subhead">
+        Billed per month. <br/>
+        Adjust your limit at any time. <br/>
+        Cancel at any time.
+      </p>
+
+      <small>* Please note, being a dinosaur is not required to create an account.</small>
+
+      <p class="lead mt-4">
+        <a href="/auth" class="btn btn-lg btn-secondary" target="_blank">Get started</a>
+      </p>
+    </ng-container>
+
+
+    <ng-container *ngIf="view == 'home'">
+      <main role="main" class="inner cover">
+        <h1 class="cover-heading">
+          <span>Don<span class="comma">'</span>t</span>
+          <span>be</span>
+          <span>a</span><br/>
+          <span>dinosaur</span>
+        </h1>
+        <p class="lead mt-2">
+          Modernise your prehistoric PDF pipeline
+        </p>
+      </main>
+
+      <div class="text-center mt-4 carbon">
+        <img src="../../assets/carbon.png" width="100%" class="carbon" />
+      </div>
+
+      <p class="mt-4 subhead">
+        PDFasaurus lets you create PDFs<br/>
+        using familiar HTML & an easy to use API.
+      </p>
+
+      <p class="lead mt-4">
+        <a href="/auth" class="btn btn-lg btn-secondary" target="_blank">Get started</a>
+      </p>
+    </ng-container>
+
+    <footer class="mastfoot mt-auto">
+      <div class="inner">
+        <p>made with <img src="../../assets/coffee.png" border="0" class="coffee" /> by <a href="https://joduplessis.com" target="_blank"><img src="../../assets/jo.jpg" border="0" class="company" /></a></p>
+      </div>
+    </footer>
+  </div>

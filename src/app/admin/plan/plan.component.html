@@ -1,0 +1,54 @@
+
+<div class="row w-100">
+  <div>
+    <h1 class="h2">Your plan</h1>
+    <h4 class="h6">You can change or cancel at any time</h4>
+  </div>
+  <div class="ml-auto">
+    <div class="btn-group" *ngIf="plan != 0">
+      <button type="button" class="btn btn-sm btn-dark" (click)="deletePlan()">Cancel now</button>
+    </div>
+  </div>
+</div>
+
+<div class="alert alert-success" role="alert">
+  Get fossilized (and also 100% off) using the coupon code <strong>0FE2655D</strong> (valid until end of August 2021)
+</div>
+
+<div class="alert alert-success" role="alert" *ngIf="!!notification">
+  {{notification}}
+</div>
+
+<div class="alert alert-danger" role="alert" *ngIf="!!error">
+  {{error}}
+</div>
+
+<div class="fossils" *ngIf="plan != 0">
+  <img src="../../../assets/fossil.png" height="300" />
+  <div class="plan">{{plan}} {{plan == 1 ? "fossil" : "fossils"}}</div>
+  <div class="amount">{{requests}} api requests for ${{dollarFossilValue * plan}} per month</div>
+  <div class="renewal">Next billing date is {{nextBillDate}}</div>
+  <div class="row upgrade-row">
+
+    <div class="api-button" (click)="decrease()">
+      <span data-feather="minus"></span>
+    </div>
+    <div class="api-button" (click)="increase()">
+      <span data-feather="plus"></span>
+    </div>
+
+    <a href="javascript:void(0);" class="btn btn-sm btn-dark change-button" (click)="changePlan()">Update now</a>
+  </div>
+</div>
+
+
+<div class="fossils" *ngIf="plan == 0">
+  <img src="../../../assets/fossil.png" height="300" />
+  <div class="plan">No fossils</div>
+  <div class="amount">Each fossil = 100 API requests per month.</div>
+  <div class="row">
+    <div class="btn-group">
+      <a href="javascript:void(0);" class="btn btn-sm btn-dark buy-button" (click)="startPlan()">Buy fossils</a>
+    </div>
+  </div>
+</div>
