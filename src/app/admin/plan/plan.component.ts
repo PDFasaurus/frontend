@@ -49,7 +49,7 @@ export class PlanComponent implements OnInit {
   changePlan() {
     if (confirm('Are you sure you want to do this?')) {
       const token: string = this.cookieService.getCookie(AUTH_COOKIE);
-      const userId: number = this.adminService.parseJwt(token).sub
+      const userId: string = this.adminService.parseJwt(token).sub
       const { plan } = this;
 
       this.adminService
@@ -69,7 +69,7 @@ export class PlanComponent implements OnInit {
   deletePlan() {
     if (confirm('Are you sure you want to do this?')) {
       const token: string = this.cookieService.getCookie(AUTH_COOKIE);
-      const userId: number = this.adminService.parseJwt(token).sub
+      const userId: string = this.adminService.parseJwt(token).sub
 
       this.adminService
         .cancelSubscription(userId, token)
@@ -123,7 +123,7 @@ export class PlanComponent implements OnInit {
 
   fetchSubscription() {
     const token: string = this.cookieService.getCookie(AUTH_COOKIE);
-    const userId: number = this.adminService.parseJwt(token).sub
+    const userId: string = this.adminService.parseJwt(token).sub
 
     this.adminService
       .getSubscription(userId, token)

@@ -42,7 +42,7 @@ export class AdminService {
   }
 
   getSubscription(
-    userId: number,
+    userId: string,
     token: string,
   ): any {
     const httpOptionsWithToken = {
@@ -57,7 +57,7 @@ export class AdminService {
   }
 
   cancelSubscription(
-    userId: number,
+    userId: string,
     token: string,
   ): any {
     const httpOptionsWithToken = {
@@ -72,7 +72,7 @@ export class AdminService {
   }
 
   updateSubscription(
-    userId: number,
+    userId: string,
     plan: number,
     token: string,
   ): any {
@@ -116,7 +116,7 @@ export class AdminService {
   }
 
   updateTemplate(
-    templateId: number,
+    templateId: string,
     content: string,
     name: string,
     token: string,
@@ -137,7 +137,7 @@ export class AdminService {
   }
 
   deleteTemplate(
-    templateId: number,
+    templateId: string,
     content: string,
     name: string,
     token: string,
@@ -158,7 +158,7 @@ export class AdminService {
   }
 
   getTemplate(
-    templateId: number,
+    templateId: string,
     token: string,
   ): any {
     const httpOptionsWithToken = {
@@ -204,7 +204,7 @@ export class AdminService {
   }
 
   preview(
-    templateId: number,
+    templateId: string,
     templateValues: string,
     token: string,
   ): any {

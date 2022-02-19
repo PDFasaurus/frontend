@@ -21,7 +21,7 @@ export class TemplateComponent implements OnInit {
   name:string;
   error: string;
   notification: string;
-  templateId: number;
+  templateId: string;
 
   constructor(
     private modalService: NgbModal,
