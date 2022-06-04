@@ -14,6 +14,7 @@ import { HighlightPlusModule } from 'ngx-highlightjs/plus';
 import { FormsModule } from '@angular/forms';
 import { CodemirrorModule } from '@ctrl/ngx-codemirror';
 import { PlanComponent } from './plan/plan.component';
+import { EditorModule } from '@tinymce/tinymce-angular';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { PlanComponent } from './plan/plan.component';
     NgbNavModule,
     HighlightPlusModule,
     FormsModule,
-    CodemirrorModule
+    CodemirrorModule,
+    EditorModule,
   ]
 })
 export class AdminModule { }

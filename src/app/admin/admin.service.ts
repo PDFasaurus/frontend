@@ -119,6 +119,8 @@ export class AdminService {
     templateId: string,
     content: string,
     name: string,
+    width: number,
+    height: number,
     token: string,
   ): any {
     const httpOptionsWithToken = {
@@ -133,6 +135,8 @@ export class AdminService {
       content,
       name,
       deleted: false,
+      width,
+      height,
     }, httpOptionsWithToken);
   }
 

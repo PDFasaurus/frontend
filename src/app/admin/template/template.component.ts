@@ -22,6 +22,8 @@ export class TemplateComponent implements OnInit {
   error: string;
   notification: string;
   templateId: string;
+  width: number;
+  height: number;
 
   constructor(
     private modalService: NgbModal,
@@ -37,11 +39,13 @@ export class TemplateComponent implements OnInit {
     this.adminService
       .getTemplate(this.templateId, this.cookieService.getCookie(AUTH_COOKIE))
       .subscribe((res: any) => {
-        const { uuid, name, content } = res;
+        const { uuid, name, content, width, height } = res;
 
         this.uuid = uuid;
         this.name = name;
         this.content = content;
+        this.width = width;
+        this.height = height;
     }, (err) => {
       this.error = ERRORS.GENERIC;
     });
@@ -49,7 +53,7 @@ export class TemplateComponent implements OnInit {
 
   save() {
     this.adminService
-      .updateTemplate(this.templateId, this.content, this.name, this.cookieService.getCookie(AUTH_COOKIE))
+      .updateTemplate(this.templateId, this.content, this.name, this.width, this.height, this.cookieService.getCookie(AUTH_COOKIE))
       .subscribe((res: any) => {
         this.notification = "Successfully updated";
     }, (err) => {

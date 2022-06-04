@@ -77,3 +77,30 @@ h4 {
 .row {
   align-items: flex-start;
 }
+
+.dimensions {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  margin-bottom: 20px;
+  margin-top: -20px;
+}
+
+.dimensions input {
+  background: white;
+  border: none;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 5px;
+}
+
+.dimensions label {
+  font-family: monospace;
+  font-weight: 500;
+  color: #21262A;
+  font-size: 14px;
+  padding: 5px;
+  margin: 5px;
+}

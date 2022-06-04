@@ -23,6 +23,12 @@
         {{uuid}} <span data-feather="clipboard"></span>
       </span>
     </h4>
+    <div class="dimensions">
+      <label>Width (mm):</label>
+      <input class="input" [(ngModel)]="width" type="number" placeholder="width (mm)"/>
+      <label>Height (mm):</label>
+      <input class="input" [(ngModel)]="height" type="number" placeholder="height (mm)"/>
+    </div>
   </div>
   <div class="ml-auto">
     <div class="btn-group mr-1">
@@ -50,6 +56,28 @@
 
   <div class="w-75">
     <h5>HTML template</h5>
+
+    <editor
+      apiKey="sn1ug25cvougektwj42ajyonosbdvza0svcnib9m0oos5r1z"
+      [(ngModel)]="content"
+      [init]="{
+    height: 500,
+    menubar: false,
+    plugins: [
+      'advlist autolink lists link image charmap print preview anchor',
+      'searchreplace visualblocks code fullscreen',
+      'insertdatetime media table paste code help wordcount',
+      'save'
+    ],
+    toolbar:
+      'undo redo | formatselect | bold italic backcolor | \
+      alignleft aligncenter alignright alignjustify | \
+      bullist numlist outdent indent | removeformat | help | save'
+
+  }">
+    </editor>
+
+    <!--
     <ngx-codemirror
       [(ngModel)]="content"
       [options]="{
@@ -58,5 +86,6 @@
         mode: 'handlbars'
       }"
     ></ngx-codemirror>
+    -->
   </div>
 </div>
